@@ -1,5 +1,8 @@
 {
-  "name": "package",
-  "version": "0.0.0",
-  "dependencies": {}
+  "name": "<%=appName%>",
+  "version": "0.0.1",
+  "main": "index.js",
+  "dependencies": {
+      "lizard-engine": "*"
+  }
 }

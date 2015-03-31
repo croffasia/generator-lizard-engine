@@ -1,14 +1,21 @@
 {
   "name": "generator-lizard-engine",
-  "version": "0.0.0",
-  "description": "Yeoman generator",
+  "version": "0.0.1",
+  "description": "LizardEngine Generator by Yeoman",
   "license": "MIT",
   "main": "app/index.js",
-  "repository": "PoluosmakAndrew/generator-lizard-engine",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/PoluosmakAndrew/generator-lizard-engine"
+  },
+  "homepage": "https://github.com/PoluosmakAndrew/generator-lizard-engine",
   "author": {
-    "name": "Poluosmak Andrew",
-    "email": "poluosmak.a@gmail.com",
-    "url": "https://github.com/PoluosmakAndrew"
+    "name": "Andrew Poluosmak",
+    "email": "poluosmak.a@gmail.com"
+  },
+  "readmeFilename": "README.md",
+  "bugs": {
+    "url": "https://github.com/PoluosmakAndrew/generator-lizard-engine/issues"
   },
   "engines": {
     "node": ">=0.10.0"
@@ -17,10 +24,28 @@
     "test": "mocha"
   },
   "files": [
-    "app"
+    "app",
+    "module",
+    "controller",
+    "component",
+    "model",
+    "plugin"
   ],
   "keywords": [
-    "yeoman-generator"
+    "yeoman-generator",
+    "framework",
+    "lizard",
+    "lizard-engine",
+    "web",
+    "express",
+    "router",
+    "app",
+    "modules",
+    "api",
+    "component",
+    "plugins",
+    "mongodb"
+
   ],
   "dependencies": {
     "yeoman-generator": "^0.18.9",
