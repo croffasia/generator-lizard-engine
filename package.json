@@ -32,10 +32,10 @@
     "plugin"
   ],
   "keywords": [
-    "yeoman-generator",
-    "framework",
     "lizard",
     "lizard-engine",
+    "framework",
+    "yeoman-generator",
     "web",
     "express",
     "router",

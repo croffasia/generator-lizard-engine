@@ -11,9 +11,8 @@ module.exports = yeoman.generators.Base.extend({
   prompting: function () {
     var done = this.async();
 
-    // Have Yeoman greet the user.
     this.log(yosay(
-      'Welcome to the astonishing ' + chalk.red('LizardEngine') + ' generator!'
+      'Генератор базового приложения LizardEngine!'
     ));
 
     var prompts = [
@@ -22,48 +21,11 @@ module.exports = yeoman.generators.Base.extend({
         name: 'app_name',
         message: 'Введите название приложения (без пробелов, только латиница)',
         default: this.appname
-      }
-      ,{
-        type: 'input',
-        name: 'app_port',
-        message: 'Порт приложения',
-        default: 5000
-      },{
-        type: 'input',
-        name: 'db_host',
-        message: 'MongoDB хост',
-        default: 'localhost'
-      },{
-        type: 'input',
-        name: 'db_database_name',
-        message: 'MongoDB имя базы данных',
-        default: this.appname
-      },{
-        type: 'input',
-        name: 'db_database_port',
-        message: 'MongoDB порт',
-        default: 27017
-      },{
-        type: 'input',
-        name: 'db_database_user',
-        message: 'Пользователь MongoDB',
-        default: ''
-      },{
-        type: 'input',
-        name: 'db_database_pass',
-        message: 'Пароль MongoDB',
-        default: ''
       }];
 
     this.prompt(prompts, function (props) {
 
       this.app_name = props.app_name;
-      this.app_port = props.app_port;
-      this.db_host = props.db_host;
-      this.db_database_name = props.db_database_name;
-      this.db_database_port = props.db_database_port;
-      this.db_database_user = props.db_database_user;
-      this.db_database_pass = props.db_database_pass;
 
       done();
 
@@ -153,14 +115,11 @@ module.exports = yeoman.generators.Base.extend({
       this.template('_package.json', 'package.json', {appName: this.app_name });
       this.template('modules/app/_routing.json', 'modules/app/routing.json', {ModuleName: 'app' });
 
-      this.template('_index.js', 'index.js', {AppPort: this.app_port
-                                              ,DataBaseName: this.db_database_name
+      this.template('_index.js', 'index.js', {AppName: this.app_name
                                               ,CreatedDate: new Date()
-                                              ,DataBaseHost: this.db_host
-                                              ,DataBasePort: this.db_database_port
-                                              ,DataBaseUserName: this.db_database_user
-                                              ,DataBasePassword: this.db_database_pass
                                              });
+
+      this.template('_middleware.js', 'middleware.js', {CreatedDate: new Date()});
     }
   },
 

@@ -7,16 +7,15 @@
  * Support: https://github.com/PoluosmakAndrew/lizard-engine/issues
  */
 
-var lizard = require('lizard-engine');
+var lizard = require('lizard-engine'),
+    middleware = require('./middleware');
 
-lizard.init({
-  'mongodb db': '<%=DataBaseName%>',
-  'mongodb host': '<%=DataBaseHost%>',
-  'mongodb port': '<%=DataBasePort%>',
-  'mongodb user': '<%=DataBaseUserName%>',
-  'mongodb password': '<%=DataBasePassword%>',
-  'port': '<%=AppPort%>',
-  'main controller': 'app.index'
+lizard.on(lizard.EVENT_COMPLETE_CONFIGURE, function(){
+  lizard.start();
 });
 
-lizard.start();
+lizard.init({
+  'name': '<%=AppName%>',
+  'main controller': 'app.index',
+  'application configure': middleware
+});
