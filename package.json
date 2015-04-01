@@ -1,6 +1,6 @@
 {
   "name": "generator-lizard-engine",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "LizardEngine Generator for Yeoman",
   "license": "MIT",
   "main": "app/index.js",
@@ -45,7 +45,6 @@
     "component",
     "plugins",
     "mongodb"
-
   ],
   "dependencies": {
     "yeoman-generator": "^0.18.9",
