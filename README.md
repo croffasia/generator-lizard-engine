@@ -1,6 +1,5 @@
 ![Lizard Engine](http://i.imgur.com/mhamGKF.png)
 ===================================
-
 ## Генератор [LizardEngine](https://github.com/PoluosmakAndrew/lizard-engine) for [Yeoman](http://yeoman.io/)
 
 ### Быстрый старт
