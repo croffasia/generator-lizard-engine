@@ -29,7 +29,8 @@
     "controller",
     "component",
     "model",
-    "plugin"
+    "plugin",
+    "install"
   ],
   "keywords": [
     "lizard",
