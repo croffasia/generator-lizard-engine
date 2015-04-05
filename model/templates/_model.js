@@ -9,6 +9,7 @@
 
 var lizard = require('lizard-engine'),
   BaseModel = lizard.Database.Model,
+  Types     = lizard.Database.Types,
   util = require("util");
 
 var Model = function()
@@ -16,12 +17,11 @@ var Model = function()
   BaseModel.apply(this);
 
   this.collection = "<%=ModelName%>";
-  this.columns = {_id: null, title: null };
+
+  this.init({"name" : { type: Types.String, required: true }});
 
 };
 
-// Наследуем класс от базовой модели
 util.inherits(Model, BaseModel);
 
-// Експорт модели
 module.exports = Model;
